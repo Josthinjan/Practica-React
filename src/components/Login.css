@@ -1,0 +1,108 @@
+/*boton*/
+/*paleta de colores y general*/
+:root {
+    --rojouleam: rgb(227, 6, 20);
+    --verdeuleam: rgb(149, 193, 31);
+    --grisuleam: rgb(243, 243, 243);
+    --oscuro: rgb(22, 28, 39);
+}
+
+body {
+    font-family: 'comic neue', sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+
+/*Todo para el header y footer*/
+header,
+footer {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    background-color: var(--grisuleam);
+}
+
+footer {
+    font-size: 10px;
+    background-color: var(--oscuro);
+    color: var(--grisuleam);
+}
+
+.logo {
+    width: 100px;
+    margin-left: 20px;
+}
+
+footer p {
+    margin-left: 20px;
+}
+
+button {
+    font-family: 'comic neue', sans-serif;
+    background-color: var(--verdeuleam);
+    border: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5vh;
+    margin-top: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    margin-left: 30%;
+}
+
+button:hover {
+    transition: 0.5s;
+    background-color: var(--rojouleam);
+    color: var(--grisuleam);
+}
+
+
+/*estilo login*/
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+.login {
+    padding: 1px;
+    width: 400px;
+    background-color: var(--grisuleam);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    margin-top: 70px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login form input {
+    width: 300px;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 2px;
+    border-color: var(--oscuro);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.textologin {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.mensaje {
+    width: 320px;
+    height: 25px;
+    font-size: 15px;
+}
