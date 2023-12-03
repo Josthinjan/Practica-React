@@ -1,19 +1,18 @@
-/*boton*/
 /*paleta de colores y general*/
 :root {
     --rojouleam: rgb(227, 6, 20);
     --verdeuleam: rgb(149, 193, 31);
     --grisuleam: rgb(243, 243, 243);
     --oscuro: rgb(22, 28, 39);
+
 }
 
-.body-login {
+body {
     font-family: 'comic neue', sans-serif;
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
     margin: 0;
-    background-color: white;
 }
 
 img {
@@ -23,9 +22,9 @@ img {
 
 
 /*Todo para el header y footer*/
-.header-login {
+.cabeza {
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 70% 30%;
     background-color: var(--grisuleam);
 }
 
@@ -44,71 +43,65 @@ footer p {
     margin-left: 20px;
 }
 
-.boton-login {
+.boton-home {
     font-family: 'comic neue', sans-serif;
     background-color: var(--verdeuleam);
     border: none;
     font-size: 20px;
     padding: 10px 20px;
-    border-radius: 5vh;
+    border-radius: 40px;
     margin-top: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    margin-bottom: 10px;
-    margin-left: 30%;
+    white-space: nowrap;
     cursor: pointer;
 }
 
-.boton-login:hover {
+.boton-home:hover {
     transition: 0.5s;
     background-color: var(--rojouleam);
     color: var(--grisuleam);
 }
 
-
-/*estilo login*/
-.main-login {
+.botones-main {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 80vh;
+    gap: 15px;
+
 }
 
-.login {
-    padding: 1px;
-    width: 400px;
-    background-color: var(--grisuleam);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    margin: auto;
-    margin-top: 70px;
-    border-radius: 10px;
+
+
+/*Main*/
+.cuerpo-main {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    background-color: white;
+}
+
+.imagen,
+.img {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 400px;
+    margin-top: 90px;
+    margin-left: 50px;
 }
 
-.login form input {
-    width: 300px;
-    height: 30px;
-    margin-top: 20px;
-    border-radius: 10px;
-    border: 2px;
-    border-color: var(--oscuro);
+.indeximg {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
 }
 
-.textologin {
-    margin-top: 10px;
-    margin-left: 20px;
+.textoindex {
+    margin-top: 50px;
+    margin-left: 90px;
+    font-size: 20px;
+    padding: 1px;
 }
 
-.mensaje {
-    width: 320px;
-    height: 25px;
-    font-size: 15px;
+li {
+    list-style: none;
+
 }
 
-.h {
-    margin-top: 30px;
-    margin-left: -4%;
+h1 {
+    font-size: 40px;
 }

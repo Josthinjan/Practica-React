@@ -1,0 +1,116 @@
+/*paleta de colores y general*/
+:root {
+    --rojouleam: rgb(227, 6, 20);
+    --verdeuleam: rgb(149, 193, 31);
+    --grisuleam: rgb(243, 243, 243);
+    --oscuro: rgb(22, 28, 39);
+    --blanco: rgb(255, 255, 255);
+    --bordes: rgb(223, 222, 218);
+}
+
+.body-principal {
+    font-family: 'comic neue', sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--grisuleam);
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/*Todo para el header y footer*/
+.cabeza-main {
+    display: grid;
+    grid-template-columns: 70% 25% 5%;
+    background-color: white;
+}
+
+footer {
+    font-size: 10px;
+    background-color: var(--oscuro);
+    color: var(--grisuleam);
+}
+
+.logo {
+    width: 100px;
+    margin-left: 20px;
+}
+
+footer p {
+    margin-left: 20px;
+}
+
+.contenido-main a {
+    text-decoration: none;
+    color: var(--oscuro);
+}
+
+.trabajos-main {
+    margin-top: 35px;
+}
+
+/*estilo de todo el main*/
+.main-principal {
+    background-color: var(--grisuleam);
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.principal-main {
+    display: grid;
+    grid-template-columns: 20% 78%;
+    grid-gap: 1em;
+    width: 1300px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.centro-main,
+.izquierda-main {
+    background-color: var(--blanco);
+    border: 1px solid var(--bordes);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 40px;
+}
+
+/*derecha*/
+.ofertas-main {
+    margin-top: 20px;
+    width: 650px;
+}
+
+.centro-main {
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+
+
+/*izquierda*/
+.izquierda {
+    margin-left: 10px;
+    height: 300px;
+}
+
+.usuario-main {
+    width: 60px;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+.contenido-main {
+    margin-left: 30px;
+    margin-top: 30%;
+}

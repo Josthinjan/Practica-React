@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Registro.css';
 import logouleam from '../imagenes/logouleam.png';
 
-const Registro = () => {
+const Perfil = () => {
     const [nombre, setNombre] = useState('');
     const [cedula, setCedula] = useState('');
     const [correo, setCorreo] = useState('');
@@ -60,19 +60,23 @@ const Registro = () => {
             };
 
             localStorage.setItem('userData', JSON.stringify(userData));
-            alert('Registro exitoso');
+            alert('Cambios realizados de manera exitosa');
         }
     };
 
     useEffect(() => {
-        // Restablecer los estados del formulario a valores iniciales al montar el componente
-        setNombre('');
-        setCedula('');
-        setCorreo('');
-        setContraseña('');
-        setTelefono('');
-        setEdad('');
-        setGenero('defecto');
+        // Obtener datos del localStorage al montar el componente
+        const userData = JSON.parse(localStorage.getItem('userData'));
+
+        if (userData) {
+            setNombre(userData.nombre || '');
+            setCedula(userData.cedula || '');
+            setCorreo(userData.correo || '');
+            setContraseña(userData.contraseña || '');
+            setTelefono(userData.telefono || '');
+            setEdad(userData.edad || '');
+            setGenero(userData.genero || 'defecto');
+        }
     }, []);
 
 
@@ -116,7 +120,7 @@ const Registro = () => {
             <body>
                 <header>
                     <div className="logo">
-                        <Link to={'/'}>
+                        <Link to={'/Principal'}>
                             <img src={logouleam} alt="Logo" />
                         </Link>
                     </div>
@@ -125,7 +129,7 @@ const Registro = () => {
                 <main>
                     <div className="cuerpo-registro">
                         <form action="" className="registrof" id="registrof" onSubmit={handleRegistro}>
-                            <h2 className="t-registro">Registro</h2>
+                            <h2 className="t-registro">Perfil</h2>
                             <div className="texto-registro">
                                 <div className="izquierda-registro">
                                     <input
@@ -200,10 +204,9 @@ const Registro = () => {
                                 </div>
                             </div>
                             <button type="submit" id="registrarse">
-                                Registrarse
+                                Guardar Cambios
                             </button>
                             <p className="textoregistro">
-                                ¿Ya tienes una cuenta? <Link to={'/Login'}><b>Iniciar Sesión</b></Link>
                             </p>
                         </form>
                     </div>
@@ -216,4 +219,4 @@ const Registro = () => {
     );
 };
 
-export default Registro;
+export default Perfil;

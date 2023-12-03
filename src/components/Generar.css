@@ -1,0 +1,131 @@
+/*paleta de colores y general*/
+:root {
+    --rojouleam: rgb(227, 6, 20);
+    --verdeuleam: rgb(149, 193, 31);
+    --grisuleam: rgb(243, 243, 243);
+    --oscuro: rgb(22, 28, 39);
+    --blanco: rgb(255, 255, 255);
+    --bordes: rgb(223, 222, 218);
+}
+
+.body-generar {
+    font-family: 'comic neue', sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+
+/*Todo para el header y footer*/
+.header-generar {
+    background-color: var(--grisuleam);
+}
+
+footer {
+    font-size: 10px;
+    background-color: var(--oscuro);
+    color: var(--grisuleam);
+}
+
+.logo-generar {
+    width: 100px;
+    margin-left: 20px;
+}
+
+footer p {
+    margin-left: 20px;
+}
+
+/* estilo del cuerpo */
+.main-generar {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    height: 80vh;
+}
+
+.cuerpo-generar {
+    width: 1200px;
+}
+
+.formulario-generar {
+    background-color: var(--grisuleam);
+    border: 1px solid var(--bordes);
+    border-radius: 10px;
+    padding: 20px;
+    height: 400px;
+}
+
+select,
+input {
+    width: 1140px;
+    height: 30px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    font-family: 'comic neue', sans-serif;
+    border: 2px;
+    border-color: var(--oscuro);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.descripcion-generar {
+    width: 600px;
+    height: 150px;
+}
+
+textarea {
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    font-family: 'comic neue', sans-serif;
+    border: 2px;
+    border-color: var(--oscuro);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.division-generar {
+    display: grid;
+    grid-template-columns: 55% 45%;
+}
+
+.derecha-generar {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+/*boton*/
+
+button {
+    font-family: 'comic neue', sans-serif;
+    background-color: var(--verdeuleam);
+    border: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5vh;
+    margin-top: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0px;
+    margin-left: 37%;
+}
+
+button:hover {
+    transition: 0.5s;
+    background-color: var(--rojouleam);
+    color: var(--grisuleam);
+}
+
+h1 {
+    font-size: 24px;
+}

@@ -1,5 +1,14 @@
-import './Login.css'
+import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import './Login.css';
+import logouleam from '../imagenes/logouleam.png';
+
 const Login = () => {
+    const navigate = useNavigate();
+    const [estalogeado, setEstaLogeado] = useState(false);
+    const [correo, setCorreo] = useState('');
+    const [contraseña, setContraseña] = useState('');
+
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
             login();
@@ -7,38 +16,48 @@ const Login = () => {
     };
 
     const login = () => {
-        var usuario = document.getElementById("correo").value;
-        var contraseña = document.getElementById("contraseña").value;
-        var mensaje = document.getElementById("mensaje");
-
-        if (usuario === "usuario@gmail" && contraseña === "contraseña") {
-            estalogeado = true; // Marcar al usuario como autenticado
-            window.location.href = "../main/principal.html";
+        const storedUserData = JSON.parse(localStorage.getItem('userData'));
+        if (storedUserData) {
+            if (correo === storedUserData.correo && contraseña === storedUserData.contraseña) {
+                setEstaLogeado(true);
+                navigate('/Principal');
+            } else {
+                alert('Nombre de usuario o contraseña incorrectos.');
+            }
         } else {
-            mensaje.innerHTML = "Nombre de usuario o contraseña incorrectos.";
-            mensaje.style.color = "red";
+            alert('No hay datos de usuario almacenados');
         }
-
-        // Evita que el formulario se envíe automáticamente.
-        // Note: In React, you would typically use the event parameter in the function signature.
-        // Since you're using 'event' without declaring it, it might not work as expected in React.
-        event.preventDefault();
     };
+
+    useEffect(() => {
+        const storedUserData = JSON.parse(localStorage.getItem('userData'));
+        if (storedUserData) {
+            setCorreo(storedUserData.correo);
+        }
+    }, []);
 
     return (
         <>
-
-            <body>
-                <main id="principal">
+            <body className='body-login'>
+                <header className='header-login'>
+                    <div className="logo">
+                        <Link to={'/'}>
+                            <img src={logouleam} alt="Logo" />
+                        </Link>
+                    </div>
+                </header>
+                <main id="principal" className='main-login'>
                     <div className="login">
                         <form action="" className="loginf" id="loginf">
-                            <h2>Iniciar Sesión</h2>
+                            <h2 className='h'>Iniciar Sesión</h2>
                             <input
                                 type="email"
                                 className="logincorreo"
                                 placeholder="Correo"
                                 id="correo"
                                 required
+                                value={correo}
+                                onChange={(e) => setCorreo(e.target.value)}
                             /><br />
                             <input
                                 type="password"
@@ -46,27 +65,34 @@ const Login = () => {
                                 className="logincontraseña"
                                 placeholder="Contraseña"
                                 required
-                                onKeyPress={handleKeyPress} // Add onKeyPress event
+                                onKeyPress={handleKeyPress}
+                                value={contraseña}
+                                onChange={(e) => setContraseña(e.target.value)}
                             /><br />
                             <div className="mensaje">
                                 <p id="mensaje"></p>
                             </div>
-                            <button type="button" onClick={login} id="enviarFormularioBtn">
+                            <button
+                                type="button"
+                                className='boton-login'
+                                onClick={login}
+                                id="enviarFormularioBtn"
+                            >
                                 Enviar
                             </button>
                             <p className="textologin">
-                                ¿No tienes cuenta? <a href="registro.jsx"><b>Regístrate aquí</b></a>
+                                ¿No tienes cuenta? <Link to={'/Registro'}><b>Regístrate aquí</b></Link>
                             </p>
                         </form>
                     </div>
                 </main>
-
+                <footer>
+                    <p>Copyright Josthin Baque 2023</p>
+                </footer>
             </body>
-            <footer>
-                <p>Copyright Josthin Baque 2023</p>
-            </footer>
         </>
     );
 };
 
 export default Login;
+

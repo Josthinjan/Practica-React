@@ -81,7 +81,7 @@ main {
     background-color: var(--grisuleam);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     margin: auto;
-    margin-top: 15px;
+    margin-top: 20px;
     border-radius: 10px;
     position: relative;
     display: flex;
@@ -89,7 +89,7 @@ main {
     align-items: center;
 }
 
-.texto {
+.texto-registro {
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -116,8 +116,7 @@ main {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.izquierda,
-h2,
+.izquierda-registro,
 p {
     margin-left: 25px;
 }
